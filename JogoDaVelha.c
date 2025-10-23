@@ -1,9 +1,46 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void mostrar_menu();
-void iniciar_jogo();
-void mostrar_placar();
+char tabuleiro[3][3];
+vitorias_humano = 0; vitorias_maquina = 0; empates = 0;
+
+void inicializarTabuleiro(){
+    for (int i = 0; i < 3; i++)
+        for (int j = 0; j < 3; j++)
+            tabuleiro[i][j] = '-';    
+}
+
+void imprimirTabuleiro(){
+    printf("\n");
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++)
+            printf(" %c ", tabuleiro[i][j]);
+        printf("\n");
+    }
+    printf("\n");
+}
+
+void mostrar_menu(){
+    printf("=======================================\n");
+    printf("        JOGO DA VELHA EM C\n");
+    printf("=======================================\n");
+    printf("1. Iniciar Jogo\n");
+    printf("2. Placar\n");
+    printf("3. Sair\n");
+    printf("---------------------------------------\n");
+}
+
+void iniciar_jogo(){
+    printf("\n[ O Jogo vai começar!\n");
+}
+
+void mostrar_placar(){
+    printf("\n[ Placar ]\n");
+    printf("Vitórias do Humano (X): %d\n", vitorias_humano);
+    printf("Vitórias da Máquina (O): %d\n", vitorias_maquina);
+    printf("Empates: %d\n", empates);
+    printf("\n");
+}
 
 int main() {
     printf("Jogo da Velha\n");
@@ -38,24 +75,4 @@ int main() {
                 break;
     }
     return 0;
-}
-
-void mostrar_menu() { 
-    printf("=======================================\n");
-    printf("        JOGO DA VELHA EM C\n");
-    printf("=======================================\n");
-    printf("1. Iniciar Jogo\n");
-    printf("2. Placar\n");
-    printf("3. Sair\n");
-    printf("---------------------------------------\n");
-}
-void mostrar_placar() {
-    printf("\n[ Placar ]\n");
-    printf("Vitórias do Humano (X): %d\n", vitorias_humano);
-    printf("Vitórias da Máquina (O): %d\n", vitorias_maquina);
-    printf("Empates: %d\n", empates);
-    printf("\n");
-}
-void iniciar_jogo() {
-    printf("\n[ O Jogo vai começar!\n");
 }
