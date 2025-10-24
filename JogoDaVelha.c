@@ -148,7 +148,7 @@ void iniciarJogo() {
     mostrarTabuleiro();
     
     if (vencedor == 1) {
-        if (turno == 1) { 
+        if (turno == 0) { 
             printf("\n*** PARABENS! Voce (X) venceu! ***\n");
         } else {
             printf("\n*** QUE PENA! A Maquina (O) venceu! ***\n");
